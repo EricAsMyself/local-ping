@@ -155,7 +155,7 @@ if __name__ == "__main__":
     print("starting")
     # setcode()
     while True:
-        for x in ["A","B","C","D","A","B","C","D"]:
+        for x in ["A","B","C","D","8", "1"]:
             for place in [D1,D2,D3,D4]:
                 display_letter(x, place)
                 time.sleep(1)
