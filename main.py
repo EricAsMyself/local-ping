@@ -61,7 +61,7 @@ def download_format (num):
     if len(old_string) > 4:
         print("error Greater than 4 speed test")
     else:
-        while (time.time() - start_time) < 5:
+        while (time.time() - start_time) < 300:
             places = [D4,D3,D2,D1]
             for x in range(len(old_string)):
                 display_letter(old_string[x], places[x])
