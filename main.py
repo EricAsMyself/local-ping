@@ -99,7 +99,7 @@ def display_letter(letter, place):
         "0": [A,B,C,D,E,F],
         ".": [H]
         }
-        GPIO.output(my_char, GPIO.LOW)
+        GPIO.output(place, GPIO.LOW)
         for my_char in to_alphabet[letter]:
             print(my_char)
             GPIO.output(my_char, GPIO.HIGH)
