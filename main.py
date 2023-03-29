@@ -21,6 +21,8 @@ E = 13
 F = 7
 G = 6
 H = 5
+
+
 GPIO.setup(18, GPIO.OUT)
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
@@ -150,5 +152,7 @@ if __name__ == "__main__":
     for x in ["A","B","C","L"]:
         display_letter(x, 1)
         time.sleep(3)
-        GPIO.cleanup()
+        for x in [A,B,C,D,E,F,G,H]:
+            GPIO.setmode(x, GPIO.LOW)
+            
     # display('Here is the new one that I found.')
