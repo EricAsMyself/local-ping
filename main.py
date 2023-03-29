@@ -151,7 +151,7 @@ if __name__ == "__main__":
     # setcode()
     for x in ["A","B","C","L"]:
         display_letter(x, 1)
-        time.sleep(3)
+        time.sleep(0.1)
         for x in [A,B,C,D,E,F,G,H]:
             GPIO.output(x, GPIO.LOW)
             
