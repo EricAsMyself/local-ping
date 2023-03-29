@@ -14,17 +14,23 @@ GPIO.cleanup()
 st = speedtest.Speedtest()
 
 A = 8
-B = 12
+B = 6
 C = 26
 D = 19
 E = 13
 F = 7
 G = 16
-H = 5
+H = 20
 
+D1 = 21
+D2 = 12
+D3 = 5
+D4 = 11
 
+for x in [D1,D2,D3,D4]:
+    GPIO.setup(x, GPIO.OUT)
+    GPIO.output(x, GPIO.LOW)
 
-GPIO.setup(18, GPIO.OUT)
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
@@ -33,11 +39,7 @@ GPIO.setup(E, GPIO.OUT)
 GPIO.setup(F, GPIO.OUT)
 GPIO.setup(G, GPIO.OUT)
 GPIO.setup(H, GPIO.OUT)
-# * D4
-# * D3 - GPIO 05
-# * D2 -GPIO 06
-# * DP - GPIO 20
-# * D1 - GPIO 21
+
 GPIO.setup(21, GPIO.OUT)
 
 GPIO.output(21, GPIO.HIGH)
