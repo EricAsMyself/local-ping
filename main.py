@@ -108,7 +108,7 @@ def display_letter(letter, place):
 
 
 def display(str_disp):
-    old_disp = str_disp
+    old_disp = str_disp.upper()
     while True:
         # length = 4
         str_disp = old_disp
