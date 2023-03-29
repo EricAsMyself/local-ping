@@ -39,7 +39,7 @@ GPIO.setup(H, GPIO.OUT)
 # * D1 - GPIO 21
 GPIO.setup(21, GPIO.OUT)
 
-GPIO.output(21, GPIO.LOW)
+GPIO.output(21, GPIO.HIGH)
 
 
 
