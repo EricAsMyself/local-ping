@@ -113,8 +113,20 @@ def display(str_disp):
         # length = 4
         str_disp = old_disp
         for x in range(len(str_disp) + 4):
-            print(str_disp[:4])
-            time.sleep(0.2)
+            new_str = str_disp[:4]
+            print(new_str)
+            reset()
+            start_time = time.time()
+            while (time.time() - start_time) < 2:
+                display_letter(new_str[1], D4)
+                reset()
+                display_letter(new_str[2], D3)
+                reset()
+                display_letter(new_str[3], D2)
+                reset()
+                display_letter(new_str[4], D1)
+                reset()
+            # time.sleep(0.2)
             str_disp =  str_disp[1:]
             str_disp += " "
         
@@ -149,23 +161,27 @@ def setcode():
     down = st.download()
     download_format(down)
     
-
+def reset():
+    for new_place in [D1,D2,D3,D4]:
+        GPIO.output(new_place, GPIO.HIGH)
+    for x in [A,B,C,D,E,F,G,H]:
+        GPIO.output(x, GPIO.LOW)
 
 if __name__ == "__main__":
     print("starting")
     # setcode()
-    while True:
-        for x in ["A","B","C","D","8", "1"]:
-            for place in [D1,D2,D3,D4]:
-                display_letter(x, place)
-                time.sleep(1)
-                for new_place in [D1,D2,D3,D4]:
-                    GPIO.output(new_place, GPIO.HIGH)
-            time.sleep(1)
+    # while True:
+    #     for x in ["A","B","C","D","8", "1"]:
+    #         for place in [D1,D2,D3,D4]:
+    #             display_letter(x, place)
+    #             time.sleep(1)
+    #             for new_place in [D1,D2,D3,D4]:
+    #                 GPIO.output(new_place, GPIO.HIGH)
+    #         time.sleep(1)
             
-            for x in [A,B,C,D,E,F,G,H]:
-                GPIO.output(x, GPIO.LOW)
+    #         for x in [A,B,C,D,E,F,G,H]:
+    #             GPIO.output(x, GPIO.LOW)
 
-        break
-    GPIO.cleanup()
-    # display('Here is the new one that I found.')
+    #     break
+    # GPIO.cleanup()
+    display('Here is the new one that I found.')
