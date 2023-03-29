@@ -51,12 +51,21 @@ def num_and_letter(num, char):
     
 
 def download_format (num):
+    start_time = time.time()
     if num < 10000000:
-        print(str(round((num/100000),2)) + "Kb/s")
+        old_string = str(round((num/100000),0))
     elif num < 10000000000:
-        print(str(round((num/1000000),2)) + "Mb/s")
+        old_string = str(round((num/1000000),0))
     elif num < 10000000000000:
-        print(str(round((num/1000000000),2)) + "Gb/s")
+        old_string = str(round((num/1000000000),0))
+    if len(old_string) > 4:
+        print("error Greater than 4 speed test")
+    else:
+        while (time.time() - start_time) < 5:
+            places = [D4,D3,D2,D1]
+            for x in range(len(old_string)):
+                display_letter(old_string[x], places[x])
+                reset()
 
 def display_letter(letter, place):
         # print(f"{letter=}, {place=}")
@@ -135,13 +144,13 @@ def setcode():
 
     
     ip_addresses = {
-        "192.168.1.10": "TRUENAS",
-        "192.168.1.11": "UNIFI",
-        "192.168.1.23": "HOMEBRIDGE"
+        "192.168.1.10": "TS",
+        "192.168.1.11": "UI",
+        "192.168.1.23": "HB"
     }
 
-    connect = "CONNECTED"
-    disconnected = "DISCONNECTED"
+    connect = "CON "
+    disconnected = "DIS "
     
     for address in ip_addresses:
         res = subprocess.call(['ping', '-c', '3', address])
