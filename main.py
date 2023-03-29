@@ -29,7 +29,7 @@ D4 = 11
 
 for x in [D1,D2,D3,D4]:
     GPIO.setup(x, GPIO.OUT)
-    GPIO.output(x, GPIO.LOW)
+    GPIO.output(x, GPIO.HIGH)
 
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
@@ -99,6 +99,7 @@ def display_letter(letter, place):
         "0": [A,B,C,D,E,F],
         ".": [H]
         }
+        GPIO.output(my_char, GPIO.LOW)
         for my_char in to_alphabet[letter]:
             print(my_char)
             GPIO.output(my_char, GPIO.HIGH)
@@ -154,11 +155,14 @@ if __name__ == "__main__":
     # setcode()
     while True:
         for x in ["A","B","C","D","A","B","C","D","8"]:
-            display_letter(x, 1)
+            for place in [D1,D2,D3,D4]:
+                display_letter(x, place)
             time.sleep(0.5)
             
             for x in [A,B,C,D,E,F,G,H]:
                 GPIO.output(x, GPIO.LOW)
+            for x in [D1,D2,D3,D4]:
+                GPIO.output(x, GPIO.HIGH)
         break
     GPIO.cleanup()
     # display('Here is the new one that I found.')
