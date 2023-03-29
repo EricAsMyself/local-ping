@@ -21,6 +21,7 @@ E = 13
 F = 7
 G = 6
 H = 5
+GPIO.setup(18, GPIO.OUT)
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
