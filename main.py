@@ -19,8 +19,9 @@ C = 26
 D = 19
 E = 13
 F = 7
-G = 6
+G = 16
 H = 5
+
 
 
 GPIO.setup(18, GPIO.OUT)
