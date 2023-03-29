@@ -59,7 +59,7 @@ def download_format (num):
         print(str(round((num/1000000000),2)) + "Gb/s")
 
 def display_letter(letter, place):
-        print(f"{letter=}, {place=}")
+        # print(f"{letter=}, {place=}")
         to_alphabet = {
         " ": [],
         "A": [A,B,F,C,E,G],
