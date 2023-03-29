@@ -158,8 +158,8 @@ if __name__ == "__main__":
         for x in ["A","B","C","D","A","B","C","D"]:
             for place in [D1,D2,D3,D4]:
                 display_letter(x, place)
-                for x in [D1,D2,D3,D4]:
-                    GPIO.output(x, GPIO.HIGH)
+                for new_place in [D1,D2,D3,D4]:
+                    GPIO.output(new_place, GPIO.HIGH)
             time.sleep(1)
             
             for x in [A,B,C,D,E,F,G,H]:
