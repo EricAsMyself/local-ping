@@ -3,11 +3,32 @@ import os
 import subprocess
 import speedtest  
 import time
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(18, GPIO.OUT)
+
+GPIO.output(18, GPIO.HIGH)
 
 
-
-  
 st = speedtest.Speedtest()
+
+A = 8
+B = 12
+C = 26
+D = 19
+E = 13
+F = 7
+G = 6
+H = 5
+
+# * D4
+# * D3 - GPIO 05
+# * D2 -GPIO 06
+# * DP - GPIO 20
+# * D1 - GPIO 21
+
 
 def num_and_letter(num, char):
     print('hello')
@@ -21,23 +42,9 @@ def download_format (num):
     elif num < 10000000000000:
         print(str(round((num/1000000000),2)) + "Gb/s")
 
-def display(str_disp):
-    
-    old_disp = str_disp
-    while True:
-        # length = 4
-        str_disp = old_disp
-        for x in range(len(str_disp) + 4):
-            print(str_disp[:4])
-            time.sleep(0.2)
-            str_disp =  str_disp[1:]
-            str_disp += " "
-        
-
-
-
-def setcode():
-    to_alphabet = {
+def display_letter(letter):
+        to_alphabet = {
+        " ": "",
         "A": "ABFCEG",
         "B": "ABCDEFG",
         "C": "ADEF",
@@ -76,6 +83,25 @@ def setcode():
         "0": "ABCDEF",
         ".": "H"
         }
+
+
+
+def display(str_disp):
+    old_disp = str_disp
+    while True:
+        # length = 4
+        str_disp = old_disp
+        for x in range(len(str_disp) + 4):
+            print(str_disp[:4])
+            time.sleep(0.2)
+            str_disp =  str_disp[1:]
+            str_disp += " "
+        
+
+
+
+def setcode():
+
     
     ip_addresses = {
         "192.168.1.10": "TRUENAS",
