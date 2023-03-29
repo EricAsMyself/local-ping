@@ -102,7 +102,7 @@ def display_letter(letter, place):
         }
         GPIO.output(place, GPIO.LOW)
         for my_char in to_alphabet[letter]:
-            print(my_char)
+            # print(my_char)
             GPIO.output(my_char, GPIO.HIGH)
 
 
@@ -117,7 +117,7 @@ def display(str_disp):
             print(new_str)
             reset()
             start_time = time.time()
-            while (time.time() - start_time) < 2:
+            while (time.time() - start_time) < 1:
                 display_letter(new_str[0], D4)
                 reset()
                 display_letter(new_str[1], D3)
@@ -146,20 +146,20 @@ def setcode():
     disconnected = {}
     
     # for ping in range(1,10):
-    for address in ip_addresses:
-        res = subprocess.call(['ping', '-c', '3', address])
-        if res == 0:
-            connect[address] = ip_addresses[address]
-        elif res == 2:
-            disconnected[address] = ip_addresses[address]
-        else:
-            print("ping to", address, "failed!")
-    for x in connect:
-        print('connected '  + connect[x])
-    for x in disconnected:
-        print('connected ' + connect[x])
-    down = st.download()
-    download_format(down)
+    # for address in ip_addresses:
+    #     res = subprocess.call(['ping', '-c', '3', address])
+    #     if res == 0:
+    #         connect[address] = ip_addresses[address]
+    #     elif res == 2:
+    #         disconnected[address] = ip_addresses[address]
+    #     else:
+    #         print("ping to", address, "failed!")
+    # for x in connect:
+    #     print('connected '  + connect[x])
+    # for x in disconnected:
+    #     print('connected ' + connect[x])
+    # down = st.download()
+    # download_format(down)
     
 def reset():
     for new_place in [D1,D2,D3,D4]:
@@ -168,7 +168,7 @@ def reset():
         GPIO.output(x, GPIO.LOW)
 
 if __name__ == "__main__":
-    print("starting")
+    # print("starting")
     # setcode()
     # while True:
     #     for x in ["A","B","C","D","8", "1"]:
