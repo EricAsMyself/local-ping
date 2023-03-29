@@ -144,5 +144,5 @@ def setcode():
 if __name__ == "__main__":
     print("starting")
     # setcode()
-    display_letter("e", 1)
+    display_letter("E", 1)
     # display('Here is the new one that I found.')
