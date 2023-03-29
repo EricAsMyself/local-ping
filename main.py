@@ -109,26 +109,24 @@ def display_letter(letter, place):
 
 def display(str_disp):
     old_disp = str_disp.upper()
-    while True:
-        # length = 4
-        str_disp = old_disp
-        for x in range(len(str_disp) + 4):
-            new_str = str_disp[:4]
-            print(new_str)
+    str_disp = old_disp
+    for x in range(len(str_disp) + 4):
+        new_str = str_disp[:4]
+        print(new_str)
+        reset()
+        start_time = time.time()
+        while (time.time() - start_time) < 1:
+            display_letter(new_str[0], D4)
             reset()
-            start_time = time.time()
-            while (time.time() - start_time) < 1:
-                display_letter(new_str[0], D4)
-                reset()
-                display_letter(new_str[1], D3)
-                reset()
-                display_letter(new_str[2], D2)
-                reset()
-                display_letter(new_str[3], D1)
-                reset()
-            # time.sleep(0.2)
-            str_disp =  str_disp[1:]
-            str_disp += " "
+            display_letter(new_str[1], D3)
+            reset()
+            display_letter(new_str[2], D2)
+            reset()
+            display_letter(new_str[3], D1)
+            reset()
+        # time.sleep(0.2)
+        str_disp =  str_disp[1:]
+        str_disp += " "
         
 
 
