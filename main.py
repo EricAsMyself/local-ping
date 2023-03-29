@@ -148,7 +148,7 @@ if __name__ == "__main__":
     print("starting")
     # setcode()
     for x in ["A","B","C","L"]:
-        display_letter("E", 1)
+        display_letter(x, 1)
         time.sleep(3)
         GPIO.cleanup()
     # display('Here is the new one that I found.')
