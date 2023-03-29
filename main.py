@@ -156,5 +156,6 @@ if __name__ == "__main__":
             
             for x in [A,B,C,D,E,F,G,H]:
                 GPIO.output(x, GPIO.LOW)
-            
+        break
+    GPIO.cleanup()
     # display('Here is the new one that I found.')
