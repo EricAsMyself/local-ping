@@ -133,7 +133,6 @@ def display(str_disp):
             reset()
             display_letter(new_str[3], D1)
             reset()
-        # time.sleep(0.2)
         str_disp =  str_disp[1:]
         str_disp += " "
         
@@ -161,12 +160,13 @@ def setcode():
         else:
             print("ping to", address, "failed!")
 
-    if len(disconnected) > 4:
-        display(connect + disconnected)
-    else:
-        display(connect)
-    down = st.download()
-    download_format(down)
+    while True:
+        if len(disconnected) > 4:
+            display(connect + disconnected)
+        else:
+            display(connect)
+        down = st.download()
+        download_format(down)
     
 def reset():
     for new_place in [D1,D2,D3,D4]:
