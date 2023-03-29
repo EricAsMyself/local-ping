@@ -157,12 +157,13 @@ if __name__ == "__main__":
         for x in ["A","B","C","D","A","B","C","D","8"]:
             for place in [D1,D2,D3,D4]:
                 display_letter(x, place)
+                for x in [D1,D2,D3,D4]:
+                    GPIO.output(x, GPIO.HIGH)
             time.sleep(0.5)
             
             for x in [A,B,C,D,E,F,G,H]:
                 GPIO.output(x, GPIO.LOW)
-            for x in [D1,D2,D3,D4]:
-                GPIO.output(x, GPIO.HIGH)
+
         break
     GPIO.cleanup()
     # display('Here is the new one that I found.')
