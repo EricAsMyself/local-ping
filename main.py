@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(18, GPIO.OUT)
+
 
 # GPIO.output(18, GPIO.HIGH)
 
@@ -22,12 +22,21 @@ E = 13
 F = 7
 G = 6
 H = 5
-
+GPIO.setup(A, GPIO.OUT)
+GPIO.setup(B, GPIO.OUT)
+GPIO.setup(C, GPIO.OUT)
+GPIO.setup(D, GPIO.OUT)
+GPIO.setup(E, GPIO.OUT)
+GPIO.setup(F, GPIO.OUT)
+GPIO.setup(G, GPIO.OUT)
+GPIO.setup(H, GPIO.OUT)
 # * D4
 # * D3 - GPIO 05
 # * D2 -GPIO 06
 # * DP - GPIO 20
 # * D1 - GPIO 21
+GPIO.setup(21, GPIO.OUT)
+GPIO.output(21, GPIO.LOW)
 
 
 def num_and_letter(num, char):
