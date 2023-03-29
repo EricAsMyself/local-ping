@@ -118,13 +118,13 @@ def display(str_disp):
             reset()
             start_time = time.time()
             while (time.time() - start_time) < 2:
-                display_letter(new_str[1], D4)
+                display_letter(new_str[0], D4)
                 reset()
-                display_letter(new_str[2], D3)
+                display_letter(new_str[1], D3)
                 reset()
-                display_letter(new_str[3], D2)
+                display_letter(new_str[2], D2)
                 reset()
-                display_letter(new_str[4], D1)
+                display_letter(new_str[3], D1)
                 reset()
             # time.sleep(0.2)
             str_disp =  str_disp[1:]
