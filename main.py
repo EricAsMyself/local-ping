@@ -150,5 +150,5 @@ if __name__ == "__main__":
     for x in ["A","B","C","L"]:
         display_letter("E", 1)
         time.sleep(3)
-    GPIO.cleanup()
+        GPIO.cleanup()
     # display('Here is the new one that I found.')
