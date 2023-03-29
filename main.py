@@ -142,24 +142,22 @@ def setcode():
         "192.168.1.23": "HOMEBRIDGE"
     }
 
-    connect = {}
-    disconnected = {}
+    connect = "CONNECTED"
+    disconnected = "DISCONNECTED"
     
-    # for ping in range(1,10):
-    # for address in ip_addresses:
-    #     res = subprocess.call(['ping', '-c', '3', address])
-    #     if res == 0:
-    #         connect[address] = ip_addresses[address]
-    #     elif res == 2:
-    #         disconnected[address] = ip_addresses[address]
-    #     else:
-    #         print("ping to", address, "failed!")
-    # for x in connect:
-    #     print('connected '  + connect[x])
-    # for x in disconnected:
-    #     print('connected ' + connect[x])
-    # down = st.download()
-    # download_format(down)
+    for address in ip_addresses:
+        res = subprocess.call(['ping', '-c', '3', address])
+        if res == 0:
+            connect += ip_addresses[address]
+        elif res == 2:
+            disconnected += ip_addresses[address]
+        else:
+            print("ping to", address, "failed!")
+
+    
+    display(connect + disconnected)
+    down = st.download()
+    download_format(down)
     
 def reset():
     for new_place in [D1,D2,D3,D4]:
@@ -169,7 +167,7 @@ def reset():
 
 if __name__ == "__main__":
     # print("starting")
-    # setcode()
+    setcode()
     # while True:
     #     for x in ["A","B","C","D","8", "1"]:
     #         for place in [D1,D2,D3,D4]:
@@ -184,4 +182,4 @@ if __name__ == "__main__":
 
     #     break
     # GPIO.cleanup()
-    display('Here is the new one that I found.')
+    # display('Here is the new one that I found.')
