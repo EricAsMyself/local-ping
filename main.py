@@ -153,6 +153,6 @@ if __name__ == "__main__":
         display_letter(x, 1)
         time.sleep(3)
         for x in [A,B,C,D,E,F,G,H]:
-            GPIO.setmode(x, GPIO.LOW)
+            GPIO.output(x, GPIO.LOW)
             
     # display('Here is the new one that I found.')
