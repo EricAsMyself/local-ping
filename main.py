@@ -7,9 +7,8 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
+GPIO.cleanup()
 
-
-# GPIO.output(18, GPIO.HIGH)
 
 
 st = speedtest.Speedtest()
@@ -36,7 +35,9 @@ GPIO.setup(H, GPIO.OUT)
 # * DP - GPIO 20
 # * D1 - GPIO 21
 GPIO.setup(21, GPIO.OUT)
+
 GPIO.output(21, GPIO.LOW)
+
 
 
 def num_and_letter(num, char):
