@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(18, GPIO.OUT)
 
-GPIO.output(18, GPIO.HIGH)
+# GPIO.output(18, GPIO.HIGH)
 
 
 st = speedtest.Speedtest()
@@ -42,47 +42,49 @@ def download_format (num):
     elif num < 10000000000000:
         print(str(round((num/1000000000),2)) + "Gb/s")
 
-def display_letter(letter):
+def display_letter(letter, place):
         to_alphabet = {
-        " ": "",
-        "A": "ABFCEG",
-        "B": "ABCDEFG",
-        "C": "ADEF",
-        "D": "ABCDEF",
-        "E": "ADEFG",
-        "F": "ABEFG",
-        "G": "ABCDFG",
-        "H": "BCEFGH",
-        "I": "EF",
-        "J": "BCDE",
-        "K": "BCEFG",
-        "L": "DEF",
-        "M": "ABCEF",
-        "N": "ABCEF",
-        "O": "ABCDEF",
-        "P": "ABEFG",
-        "Q": "ABCDEFH",
-        "R": "ABCEFGH",
-        "S": "ACDFG",
-        "T": "EFG",
-        "U": "BCDEF",
-        "V": "BCDEF",
-        "W": "BCDEF",
-        "X": "BCDEF",
-        "Y": "FBGC",
-        "Z": "ACDFG",
-        "1": "EF",
-        "2": "ABDEG",
-        "3": "ABCDG",
-        "4": "BCFG",
-        "5": "ACDFG",
-        "6": "ACDEFG",
-        "7": "ABC",
-        "8": "ABCDEFG",
-        "9": "ABCFG",
-        "0": "ABCDEF",
-        ".": "H"
+        " ": [],
+        "A": [A,B,F,C,E,G],
+        "B": [A,B,C,D,E,F,G],
+        "C": [A,D,E,F],
+        "D": [A,B,C,D,E,F],
+        "E": [A,D,E,F,G],
+        "F": [A,B,E,F,G],
+        "G": [A,B,C,D,F,G],
+        "H": [B,C,E,F,G,H],
+        "I": [E,F],
+        "J": [B,C,D,E],
+        "K": [B,C,E,F,G],
+        "L": [D,E,F],
+        "M": [A,B,C,E,F],
+        "N": [A,B,C,E,F],
+        "O": [A,B,C,D,E,F],
+        "P": [A,B,E,F,G],
+        "Q": [A,B,C,D,E,F,H],
+        "R": [A,B,C,E,F,G,H],
+        "S": [A,C,D,F,G],
+        "T": [E,F,G],
+        "U": [B,C,D,E,F],
+        "V": [B,C,D,E,F],
+        "W": [B,C,D,E,F],
+        "X": [B,C,D,E,F],
+        "Y": [F,B,G,C],
+        "Z": [A,C,D,F,G],
+        "1": [E,F],
+        "2": [A,B,D,E,G],
+        "3": [A,B,C,D,G],
+        "4": [B,C,F,G],
+        "5": [A,C,D,F,G],
+        "6": [A,C,D,E,F,G],
+        "7": [A,B,C],
+        "8": [A,B,C,D,E,F,G],
+        "9": [A,B,C,F,G],
+        "0": [A,B,C,D,E,F],
+        ".": [H]
         }
+        for my_char in to_alphabet[letter]:
+            GPIO.output(my_char, GPIO.HIGH)
 
 
 
@@ -133,4 +135,5 @@ def setcode():
 if __name__ == "__main__":
     print("starting")
     # setcode()
-    display('Here is the new one that I found.')
+    display_letter("e", 1)
+    # display('Here is the new one that I found.')
