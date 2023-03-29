@@ -15,14 +15,14 @@ st = speedtest.Speedtest()
 
 A = 8
 B = 12
-C = 26
+C = 26:wq
 D = 19
 E = 13
 F = 7
 G = 6
 H = 5
 GPIO.setup(18, GPIO.OUT)
-GPIO.setup(8, GPIO.OUT)
+GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
