@@ -15,7 +15,7 @@ st = speedtest.Speedtest()
 
 A = 8
 B = 12
-C = 26:wq
+C = 26
 D = 19
 E = 13
 F = 7
